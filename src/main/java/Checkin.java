@@ -1,3 +1,7 @@
+// Willkommen zum Checkin für alte und neue Kunden
+// Nach einem manuellem Start werden alle weiteren Optionen in der KOnsole ausgegeben
+// Nach dem Abschluss geht es weiter mit der Buchung
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
