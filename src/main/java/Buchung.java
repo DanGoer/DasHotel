@@ -110,8 +110,7 @@ public class Buchung {
             System.out.println("Gesamtkosten: " + gesamtKosten + " Euro.");
             System.out.println("Bitte fahren Sie mit dem Zimmer Service fort");
 
-            // Verfügbare Zimmer aktualisieren
-            gewaehltesZimmer.verfuegbareZimmer--;
+            
 
             break;  // Buchung erfolgreich, Schleife wird beendet
         }
