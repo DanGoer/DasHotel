@@ -1,3 +1,8 @@
+// Willkommen zur Buchung der Zimmer des Java Main Hotels
+// Verlangt einen weiteren Manuellen start
+// Ermöglicht es aus einer Auwahl an Zimmer das richtige aus zu suchen und die Anzahl der gewünschten Tage einzugeben
+// Ermöglicht die Eingabe eines Rabattcodes
+// Kalkuliert die anfallenden Kosten
 
 import java.util.Scanner;
 
@@ -9,7 +14,7 @@ public class Buchung {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        // Zimmerangebote erstellen (Name, Preis, Verfügbare Zimmer)
+        // Zimmerangebote erstellen
         String[][] zimmerListe = {
             {"Einzelzimmer", "100", "10"},
             {"Doppelzimmer", "200", "8"},
@@ -21,7 +26,7 @@ public class Buchung {
         while (true) {
             
             // Zimmerliste anzeigen
-            System.out.println("Willkommen im Java Top Hotel! Bitte wählen Sie ein Zimmer:");
+            System.out.println("Willkommen im Java Main Hotel! Bitte wählen Sie ein Zimmer:");
             for (int i = 0; i < zimmerListe.length; i++) {
                 System.out.println((i + 1) + ". " + zimmerListe[i][0] + " - " + zimmerListe[i][1] + " Euro/Nacht - Verfügbar: " + zimmerListe[i][2]);
             }

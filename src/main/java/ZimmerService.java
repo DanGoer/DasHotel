@@ -58,6 +58,17 @@ public class ZimmerService {
             System.out.println(leistung[0] + " - " + leistung[1] + " Euro");
             gesamtKosten += Integer.parseInt(leistung[1]);
         }
+        
+        // Trinkgeldabfrage
+        System.out.print("Möchten Sie ein Trinkgeld von 8% hinzufügen? (ja/nein): ");
+        String trinkgeldAntwort = scanner.nextLine().trim().toLowerCase();
+
+        if (trinkgeldAntwort.equals("ja")) {
+            double trinkgeld = gesamtKosten * 0.08;
+            gesamtKosten += trinkgeld;
+            System.out.println("Trinkgeld: " + trinkgeld + " Euro.");
+        }
+
 
         System.out.println("Gesamtkosten: " + gesamtKosten + " Euro.");
 

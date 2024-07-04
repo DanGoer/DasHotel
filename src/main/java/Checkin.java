@@ -1,5 +1,5 @@
 // Willkommen zum Checkin für alte und neue Kunden
-// Nach einem manuellem Start werden alle weiteren Optionen in der KOnsole ausgegeben
+// Nach einem manuellem Start werden alle weiteren Optionen in der Konsole ausgegeben
 // Nach dem Abschluss geht es weiter mit der Buchung
 
 import java.util.ArrayList;
