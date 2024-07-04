@@ -4,37 +4,26 @@ import java.util.Scanner;
 
 public class Buchung {
     
-        // Klasse zur Darstellung eines Zimmers
-    static class Zimmer {
-        String name;
-        int preis;
-        int verfuegbareZimmer;
-
-        Zimmer(String name, int preis, int verfuegbareZimmer) {
-            this.name = name;
-            this.preis = preis;
-            this.verfuegbareZimmer = verfuegbareZimmer;
-        }
-    }
+    
   
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        // Zimmerangebote erstellen
-        Zimmer[] zimmerListe = {
-            new Zimmer("Einzelzimmer", 100, 10),
-            new Zimmer("Doppelzimmer", 200, 8),
-            new Zimmer("Suite", 300, 5),
-            new Zimmer("Penthouse", 400, 0)
+        
+        // Zimmerangebote erstellen (Name, Preis, Verfügbare Zimmer)
+        String[][] zimmerListe = {
+            {"Einzelzimmer", "100", "10"},
+            {"Doppelzimmer", "200", "8"},
+            {"Suite", "300", "5"},
+            {"Penthouse", "400", "0"}
         };
+
         // While Schleife damit die Abfrage am laufen bleibt solange der Buchungsvorgang noch läuft
         while (true) {
             
             // Zimmerliste anzeigen
             System.out.println("Willkommen im Java Top Hotel! Bitte wählen Sie ein Zimmer:");
             for (int i = 0; i < zimmerListe.length; i++) {
-                Zimmer zimmer = zimmerListe[i];
-                System.out.println((i + 1) + ". " + zimmer.name + " - " + zimmer.preis + " Euro/Nacht - Verfügbar: " + zimmer.verfuegbareZimmer);
+                System.out.println((i + 1) + ". " + zimmerListe[i][0] + " - " + zimmerListe[i][1] + " Euro/Nacht - Verfügbar: " + zimmerListe[i][2]);
             }
 
             // Zimmerauswahl
@@ -49,9 +38,10 @@ public class Buchung {
                 continue;
             }
 
-            Zimmer gewaehltesZimmer = zimmerListe[auswahl - 1];
+            int zimmerIndex = auswahl - 1;
+            int verfuegbareZimmer = Integer.parseInt(zimmerListe[zimmerIndex][2]);
 
-            if (gewaehltesZimmer.verfuegbareZimmer == 0) {
+            if (verfuegbareZimmer == 0) {
                 System.out.println("Leider sind keine Zimmer dieses Typs mehr verfügbar. Bitte wählen Sie ein anderes Zimmer.");
                 continue;
             }
@@ -98,7 +88,8 @@ public class Buchung {
                 }
             }
             // Gesamtkosten berechnen
-            int gesamtKosten = gewaehltesZimmer.preis * naechte;
+            int preisProNacht = Integer.parseInt(zimmerListe[zimmerIndex][1]);
+            int gesamtKosten = preisProNacht * naechte;
             
             // Rabatt anwenden
             if (rabattAnwenden) {
@@ -106,7 +97,7 @@ public class Buchung {
             }
 
             // Buchungsbestätigung anzeigen und Angabe wie es weiter geht
-            System.out.println("Sie haben ein " + gewaehltesZimmer.name + " für " + naechte + " Nächte gebucht.");
+            System.out.println("Sie haben ein " + zimmerListe[zimmerIndex][0] + " für " + naechte + " Nächte gebucht.");
             System.out.println("Gesamtkosten: " + gesamtKosten + " Euro.");
             System.out.println("Bitte fahren Sie mit dem Zimmer Service fort");
 
