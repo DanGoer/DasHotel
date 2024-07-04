@@ -1,6 +1,6 @@
 // Willkommen zur Buchung der Zimmer des Java Main Hotels
 // Verlangt einen weiteren Manuellen start
-// Ermöglicht es aus einer Auwahl an Zimmer das richtige aus zu suchen und die Anzahl der gewünschten Tage einzugeben
+// Ermöglicht es aus einer Auwahl an Zimmer das Richtige aus zu suchen und die Anzahl der gewünschten Tage einzugeben
 // Ermöglicht die Eingabe eines Rabattcodes
 // Kalkuliert die anfallenden Kosten
 

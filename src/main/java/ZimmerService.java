@@ -1,5 +1,9 @@
 // Willkommen zum Zimmer Service des Java Main Hotels
-// 
+// Erstellt eine Liste mit den erwerbaren Dienstleistungen
+// Die erworbenen Dienstleistungen werden in einem anfangs leeres Array gespeichert
+// Berechnet den Gesammtpreis aller gebuchten Optionen
+// Fragt nach einem Trinkgeld
+// Gibt die anfallenden Kosten aus und verabschiedet den Kunden
 
 
 import java.util.ArrayList;
@@ -13,7 +17,7 @@ public class ZimmerService {
         // Angebotene Leistungen
         String[][] leistungen = {
             {"Frühstück", "15"},
-            {"Mittagessen", "25"},
+            {"Mittagessen", "20"},
             {"Abendessen", "30"},
             {"Zimmerreinigung", "20"},
             {"Wäscheservice", "10"}
@@ -23,7 +27,10 @@ public class ZimmerService {
         ArrayList<String[]> gebuchteLeistungen = new ArrayList<>();
 
         while (true) {
+            
             // Leistungen anzeigen
+            // TODO Die Möglichkeit einbauen das Leistungen nicht doppelt gebucht werden?
+            // Bei einer Eingabe die nicht einem Integer entspricht kommt es zu einem Fehler!
             System.out.println("Zimmer-Service Leistungen:");
             for (int i = 0; i < leistungen.length; i++) {
                 System.out.println((i + 1) + ". " + leistungen[i][0] + " - " + leistungen[i][1] + " Euro");
@@ -62,7 +69,9 @@ public class ZimmerService {
         // Trinkgeldabfrage
         System.out.print("Möchten Sie ein Trinkgeld von 8% hinzufügen? (ja/nein): ");
         String trinkgeldAntwort = scanner.nextLine().trim().toLowerCase();
-
+        
+        // Alles andere als ein JA/Ja/jA/ja wird als ein Nein aufgefasst
+        // TODO Eine unklare Antwort in ein ausgegeben Frage wie "wie Bitte?" verwandeln
         if (trinkgeldAntwort.equals("ja")) {
             double trinkgeld = gesamtKosten * 0.08;
             gesamtKosten += trinkgeld;
@@ -71,6 +80,7 @@ public class ZimmerService {
 
 
         System.out.println("Gesamtkosten: " + gesamtKosten + " Euro.");
+        System.out.println("Vielen Dank für Ihren Besuch des Java Main Hotels. Bitte beehren Sie uns bald wieder!");
 
         scanner.close();
     }
